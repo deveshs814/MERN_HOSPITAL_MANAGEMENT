@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar.jsx';
 import { Context } from './main.jsx';
+import Footer from './components/Footer.jsx';
 
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
           <Route path='/login' element = {<Login/>}/>
         </Routes>
         <ToastContainer position='top-center'/>
+        <Footer />
       </Router>
     </>
     
