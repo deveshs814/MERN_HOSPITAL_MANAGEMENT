@@ -28,7 +28,7 @@ const Navbar = () => {
   const goToLogin = () => {
     navigateTo("/login");
   };
-
+  console.log(isAuthenticated);
   return (
     <>
       <nav className={"container"}>
