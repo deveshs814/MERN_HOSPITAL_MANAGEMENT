@@ -14,10 +14,10 @@ config({ path: "./config/.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
+    origin: true,  // Accept requests from any origin
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // Corrected to lowercase 'c'
-    allowedHeaders: ["Content-Type", "Authorization"], // Add other headers as needed
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
