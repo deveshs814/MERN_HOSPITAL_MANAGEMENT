@@ -12,18 +12,18 @@ import appointmentRouter from "./router/appointmentRouter.js";
 const app = express();
 config({ path: "./config/.env" });
 
-app.use(
-  cors({
+  app.use(
+    cors({
     origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // Corrected to lowercase 'c'
     allowedHeaders: ["Content-Type", "Authorization"], // Add other headers as needed
-  })
-);
-
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+    })
+  );
+  
+app.use(cookieParser());//this is a  middleware to get our cookies.
+app.use(express.json());//this is a  middleware to convert data(json type) to string form.
+app.use(express.urlencoded({ extended: true }));  
 
 app.use(
   fileUpload({

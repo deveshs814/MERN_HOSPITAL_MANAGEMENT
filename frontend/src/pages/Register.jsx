@@ -23,7 +23,7 @@ const Register = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/patient/register",
+          "https://mern-hospital-management-fa0y.onrender.com/api/v1/user/patient/register",
           { firstName, lastName, email, phone, nic, dob, gender, password , role: "Patient"},
           {
             withCredentials: true,
@@ -55,8 +55,8 @@ const Register = () => {
   return (
     <>
       <div className="container form-component register-form">
-        <h2>Sign Up</h2>
-        <p>Please Sign Up To Continue</p>
+        <h2>Register Here</h2>
+        <p>Please Register here To Continue</p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
           voluptas expedita itaque ex, totam ad quod error?
@@ -100,7 +100,7 @@ const Register = () => {
             <input
               type={"date"}
               placeholder="Date of Birth"
-              value={dob} 
+              value={dob}
               onChange={(e) => setDob(e.target.value)}
             />
           </div>
@@ -126,7 +126,7 @@ const Register = () => {
           >
             <p style={{ marginBottom: 0 }}>Already Registered?</p>
             <Link
-              to={"/signin"}
+              to={"/login"}
               style={{ textDecoration: "none", color: "#271776ca" }}
             >
               Login Now

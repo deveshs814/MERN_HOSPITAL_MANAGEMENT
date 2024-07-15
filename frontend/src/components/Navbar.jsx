@@ -28,7 +28,7 @@ const Navbar = () => {
   const goToLogin = () => {
     navigateTo("/login");
   };
-  console.log(isAuthenticated);
+
   return (
     <>
       <nav className={"container"}>
@@ -47,13 +47,13 @@ const Navbar = () => {
               About Us
             </Link>
           </div>
-          {isAuthenticated ? (
-            <button className="logoutBtn btn" onClick={handleLogout}>
-              LOGOUT
-            </button>
-          ) : (
+          {!isAuthenticated ? (
             <button className="loginBtn btn" onClick={goToLogin}>
               LOGIN
+            </button>
+          ) : (
+            <button className="logoutBtn btn" onClick={handleLogout}>
+              LOGOUT
             </button>
           )}
         </div>
