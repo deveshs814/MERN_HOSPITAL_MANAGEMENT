@@ -11,14 +11,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
 
-  const navigateTo = useNavigate();z
+  const navigateTo = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await axios
         .post(
-          "https://mern-hospital-management-fa0y.onrender.com/api/v1/user/login",
+          "https://mern-hospital-management-lyba.onrender.com/api/v1/user/login",
           { email, password, confirmpassword, role: "Patient" },
           {
             withCredentials: true,

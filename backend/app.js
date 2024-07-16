@@ -23,7 +23,20 @@ config({ path: "./config/.env" });
   
 app.use(cookieParser());//this is a  middleware to get our cookies.
 app.use(express.json());//this is a  middleware to convert data(json type) to string form.
-app.use(express.urlencoded({ extended: true }));  
+app.use(express.urlencoded({ extended: true })); 
+
+app.use(
+  cors({
+    origin: true,  // Accept requests from any origin
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
   fileUpload({

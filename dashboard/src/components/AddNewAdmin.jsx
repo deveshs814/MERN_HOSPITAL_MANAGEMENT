@@ -23,7 +23,7 @@ const AddNewAdmin = () => {
     try {
       await axios
         .post(
-          "https://mern-hospital-management-fa0y.onrender.com/api/v1/user/admin/addnew",
+          "https://mern-hospital-management-lyba.onrender.com/api/v1/user/admin/addnew",
           { firstName, lastName, email, phone, nic, dob, gender, password },
           {
             withCredentials: true,

@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "https://mern-hospital-management-fa0y.onrender.com/api/v1/user/login",
+          "https://mern-hospital-management-lyba.onrender.com/api/v1/user/login",
           { email, password, confirmpassword, role: "Admin" },
           {
             withCredentials: true,
@@ -37,10 +37,6 @@ const Login = () => {
       toast.error(error.response.data.message);
     }
   };
-
-  if (isAuthenticated) {
-    return <Navigate to={"/"} />;
-  }
 
   return (
     <>
