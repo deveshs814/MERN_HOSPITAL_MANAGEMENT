@@ -9,48 +9,42 @@ import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 import userRouter from "../backend/router/userRouter.js";
 import appointmentRouter from "./router/appointmentRouter.js";
 
-const app = express();
+// Initialize environment variables
 config({ path: "./config/.env" });
 
-  app.use(
-    cors({
-    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
-      methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // Corrected to lowercase 'c'
-    allowedHeaders: ["Content-Type", "Authorization"], // Add other headers as needed
-    })
-  );
-  
-app.use(cookieParser());//this is a  middleware to get our cookies.
-app.use(express.json());//this is a  middleware to convert data(json type) to string form.
-app.use(express.urlencoded({ extended: true })); 
+const app = express();
 
+// CORS configuration
 app.use(
   cors({
-    origin: true,  // Accept requests from any origin
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL], // Allowed origins
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+    credentials: true, // Allow cookies
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
   })
 );
 
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Middleware
+app.use(cookieParser()); // Middleware to parse cookies
+app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
 
 app.use(
   fileUpload({
     useTempFiles: true,
-    tempFileDir: "/tmp",
+    tempFileDir: "/tmp", // Temporary directory for file uploads
   })
 );
 
+// Routes
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/appointment", appointmentRouter);
 
+// Database connection
 dbConnection();
 
+// Error middleware
 app.use(errorMiddleware);
 
 export default app;
