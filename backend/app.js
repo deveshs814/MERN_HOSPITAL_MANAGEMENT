@@ -14,10 +14,14 @@ config({ path: "./config/.env" });
 
 const app = express();
 
+// Log environment variables for debugging
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
+console.log("DASHBOARD_URL:", process.env.DASHBOARD_URL);
+
 // CORS configuration
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL], // Allowed origins
+    origin: true, // Allow requests from all origins
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
     credentials: true, // Allow cookies
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
@@ -35,6 +39,11 @@ app.use(
     tempFileDir: "/tmp", // Temporary directory for file uploads
   })
 );
+
+// Test route
+app.get("/api/v1/test", (req, res) => {
+  res.json({ message: "Backend is connected!" });
+});
 
 // Routes
 app.use("/api/v1/message", messageRouter);
