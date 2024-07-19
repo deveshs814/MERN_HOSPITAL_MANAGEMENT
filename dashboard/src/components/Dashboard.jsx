@@ -13,7 +13,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "https://mern-hospital-management-kiqh.onrender.com/api/v1/message/getall",
+          "https://mern-hospital-management-kiqh.onrender.com/api/v1/appointment/getall",
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -138,6 +138,5 @@ const Dashboard = () => {
     </>
   );
 };
-
 
 export default Dashboard;

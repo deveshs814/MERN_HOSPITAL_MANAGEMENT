@@ -10,7 +10,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const { data } = await axios.get( 
+        const { data } = await axios.get(
           "https://mern-hospital-management-kiqh.onrender.com/api/v1/message/getall",
           { withCredentials: true }
         );
