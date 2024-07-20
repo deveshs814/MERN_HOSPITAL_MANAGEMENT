@@ -44,7 +44,7 @@ const Dashboard = () => {
     }
   };
 
-  const { isAuthenticated, admin } = useContext(Context);
+  const { isAuthenticated, admin} = useContext(Context);
   if (!isAuthenticated) {
     return <Navigate to={"/login"} />;
   }
