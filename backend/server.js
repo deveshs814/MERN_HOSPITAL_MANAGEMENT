@@ -2,6 +2,9 @@ import { config } from "dotenv";
 import app from "./app.js";
 import cloudinary from 'cloudinary';
 
+
+config({ path: "./config/.env" });
+
 cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_CLOUD_KEY,
