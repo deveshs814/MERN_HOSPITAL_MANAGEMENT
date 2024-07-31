@@ -64,9 +64,7 @@ const Dashboard = () => {
                 </h5>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ut est ipsam ratione officiis alias. Nesciunt sequi ducimus odit similique eius architecto et quasi quibusdam, veniam nihil magnam deleniti labore.
               </p>
             </div>
           </div>
