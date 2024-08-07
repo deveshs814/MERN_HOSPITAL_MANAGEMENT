@@ -10,7 +10,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          "https://mern-hospital-management-kiqh.onrender.com/api/v1/message/getall",
+          "https://hms-q7hk.onrender.com/api/v1/message/getall",
           { withCredentials: true }
         );
         setMessages(data.messages);
