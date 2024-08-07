@@ -21,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "https://mern-hospital-management-kiqh.onrender.com/api/v1/user/admin/me",
+          "https://hms-q7hk.onrender.com/api/v1/user/admin/me",
           {
             withCredentials: true,
           }
